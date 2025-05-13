@@ -1,0 +1,48 @@
+
+<html>
+    
+<head>
+    
+    <title>INST377 Final Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="app_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="main.js"></script>
+
+</head>
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>See what Clothes to wear on your next Trip!</h1>
+
+    <form id="weather-form">
+
+        <p>Enter a City:</p>
+        <input type="text" id="place"  required>
+        <button class="button-54" role="button">See Weather and Clothing Recs</button>
+
+    </form>
+
+    <div id="weather-result"></div>
+    <div id="clothing-suggestion"></div>
+    <div id="outfit-image"></div>
+
+    <div class="map-chart-container">
+        <div id="map"></div>
+        <canvas id="forecast-chart"></canvas>
+    </div>
+
+    
+    
+</body>
+</html>
