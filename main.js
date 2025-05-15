@@ -101,23 +101,10 @@ form.addEventListener('submit',
             <strong>Temperature: </strong> ${temp} degrees C`)
         .openPopup();
 
-    const pointRes = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
-    const pointData = await pointRes.json();
-    const forecastHourlyUrl = pointData.properties.forecastHourly;
-    const forecastRes = await fetch(forecastHourlyUrl);
-    const forecastData = await forecastRes.json();
-
-    // async function getHourlyForecast(lat, lon) {
-
-    //     const pointRes = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
-    //     const pointData = await pointRes.json();
-
-    //     const forecastHourlyUrl = pointData.properties.forecastHourly;
-    //     const forecastRes = await fetch(forecastHourlyUrl);
-    //     const forecastData = await forecastRes.json();
-
-    //     return forecastData.properties.periods.slice(0, 12); // first 12 hours
-    // }
+    const getlatlon = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
+    const latlon = await getlatlon.json();
+    const getforecast = await fetch(latlon.properties.forecastHourly);
+    const forecastData = await getforecast.json();
 
 
     const periods = forecastData.properties.periods.slice(0, 12);
