@@ -104,24 +104,26 @@ form.addEventListener('submit',
     const getlatlon = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
     const latlon = await getlatlon.json();
     const getforecast = await fetch(latlon.properties.forecastHourly);
-    const forecastData = await getforecast.json();
+    const forecast = await getforecast.json();
+    const periods = forecast.properties.periods.slice(0, 12);
 
-
-    const periods = forecastData.properties.periods.slice(0, 12);
-    const labels = periods.map(p => {
-        const date = new Date(p.startTime);
-        let hours = date.getHours();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        return `${hours} ${ampm}`;
+    const labels = periods.map(period => {
+        const date = new Date(period.startTime);
+        return date.toLocaleTimeString([], { 
+            hour: 'numeric', 
+            hour12: true 
+        });
     });
-    const temps = periods.map(p => p.temperature);
+
+    const temp_data = periods.map(p => (
+        (period.temperature - 32) * 5 / 9).toFixed(1)
+    );
 
     var forecastChart;
 
     if (forecastChart) {
         forecastChart.data.labels = labels;
-        forecastChart.data.datasets[0].data = temps;
+        forecastChart.data.datasets[0].data = temp_data;
         forecastChart.update();
     } else {
         const ctx = document.getElementById('forecast-chart').getContext('2d');
@@ -131,7 +133,7 @@ form.addEventListener('submit',
                 labels: labels,
                 datasets: [{
                     label: 'Temperature Forecast (°F)',
-                    data: temps,
+                    data: temp_data,
                     fill: false,
                     borderColor: 'black',
                     tension: 0.3

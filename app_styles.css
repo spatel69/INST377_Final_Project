@@ -5,11 +5,6 @@ body {
     text-align: center;
 }
 
-input, button {
-    padding: 8px; 
-    font-size: 16px; 
-}
-
 .button-54 {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -37,6 +32,11 @@ input, button {
   .button-54 {
     padding: 0.25em 0.75em;
   }
+}
+
+input {
+    padding: 10px; 
+    font-size: 18px; 
 }
 
 #nav {
