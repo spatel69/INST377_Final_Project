@@ -80,7 +80,7 @@ input {
     margin-top: 32px; 
 }
 
-.map-chart-container {
+.mapdiv {
     display: flex;
     justify-content: center;
     gap: 32px; 
@@ -93,7 +93,17 @@ input {
     width: 45%;
 }
 
-#forecast-chart {
+.canvasdiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#chart-title {
+  text-align: center;
+}
+
+canvas {
     width: 45%;
     height: 400px;
 }

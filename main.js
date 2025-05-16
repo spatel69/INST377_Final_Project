@@ -1,5 +1,3 @@
-
-
 const form = document.getElementById('form');
 
 form.addEventListener('submit', 
@@ -8,7 +6,7 @@ form.addEventListener('submit',
     event.preventDefault();
 
     const place = document.getElementById('place').value;
-    const weatherstack = `https://api.weatherstack.com/current?access_key=b5db998e3a7a4b4295cb9a2101259c61&query=${encodeURIComponent(place)}`;
+    const weatherstack = `https://api.weatherstack.com/current?access_key=7f73392e905b5ffa0aca9b882bd55f3c&query=${encodeURIComponent(place)}`;
     
 
     const weather_data = document.getElementById('weather');
@@ -115,41 +113,35 @@ form.addEventListener('submit',
         });
     });
 
-    const temp_data = periods.map(p => (
+    const temp_data = periods.map(period => (
         (period.temperature - 32) * 5 / 9).toFixed(1)
     );
 
-    var forecastChart;
+    document.getElementById("12hrfc").style.display = "block";
 
-    if (forecastChart) {
-        forecastChart.data.labels = labels;
-        forecastChart.data.datasets[0].data = temp_data;
-        forecastChart.update();
+
+    var forecastgraph;
+
+    if (forecastgraph) {
+
+        forecastgraph.data.labels = labels;
+        forecastgraph.data.datasets[0].data = temp_data;
+        forecastgraph.update();
+
     } else {
-        const ctx = document.getElementById('forecast-chart').getContext('2d');
-        forecastChart = new Chart(ctx, {
+
+        const fc = document.getElementById('canvas').getContext('2d');
+        forecastgraph = new Chart(fc, {
             type: 'line',
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Temperature Forecast (°F)',
+                    label: 'Temperature forecast in celcius',
                     data: temp_data,
                     fill: false,
                     borderColor: 'black',
-                    tension: 0.3
                 }]
             },
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Next 12 Hours Temperature'
-                    }
-                }
-            }
         });
     }
 });
-
-
