@@ -24,6 +24,18 @@ form.addEventListener('submit',
     const lat = data.location.lat;
     const lon = data.location.lon;
 
+    await fetch('http://localhost:3005/location', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            place: place,
+            latitude: lat,
+            longitude: lon
+        })
+    });
+
     const condition = weather.weather_descriptions[0]
     const temp = weather.temperature
     const feels = weather.feelslike
@@ -36,15 +48,15 @@ form.addEventListener('submit',
 
     const aqres = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=us_aqi&timezone=auto`);
     const aqdata = await aqres.json();
-    const aqi = aqdata.current.us_aqi;
+    const air_quality = aqdata.current.us_aqi;
 
 
 
-    if (aqi <= 50) {
+    if (air_quality <= 50) {
         aq_suggestion = "Go outside! The air quality is good!";
-    } else if (aqi <= 100) {
+    } else if (air_quality <= 100) {
         aq_suggestion = "Go outside! The air quality is moderate!";
-    } else if (aqi <= 150) {
+    } else if (air_quality <= 150) {
         aq_suggestion = "Be hesitant when going outside because air quality can be unhealthy for sensitive people";
     } else {
         aq_suggestion = "It is reccomended that you stay indoors as the air quality can be harmful";
@@ -60,7 +72,7 @@ form.addEventListener('submit',
         <p><strong>UV Index:</strong> ${uv}</p>
         <p><strong>Humidity:</strong> ${humid} %</p>
         <p><strong>Wind Speed:</strong> ${speed} KM/H</p>
-        <p><strong>Air Quality Index:</strong> ${aqi}</p>
+        <p><strong>Air Quality Index:</strong> ${air_quality}</p>
         <p> ${aq_suggestion} <p>
         <img src="${icon}">
     `;
