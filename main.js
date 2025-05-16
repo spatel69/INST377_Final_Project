@@ -59,7 +59,7 @@ form.addEventListener('submit',
     } else if (air_quality <= 150) {
         aq_suggestion = "Be hesitant when going outside because air quality can be unhealthy for sensitive people";
     } else {
-        aq_suggestion = "It is reccomended that you stay indoors as the air quality can be harmful";
+        aq_suggestion = "It is recommended that you stay indoors as the air quality can be harmful";
     }
 
 

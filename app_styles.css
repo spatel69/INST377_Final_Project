@@ -127,3 +127,39 @@ canvas {
     object-fit: cover;
     border-radius: 10px;
 }
+
+.about-info-box {
+    background-color: #ceebee;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.about-info-box dl {
+    margin: 0;
+}
+
+.about-info-box dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.about-info-box dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.about-images {
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+  }
+  
+  .about-images img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+  }
+  

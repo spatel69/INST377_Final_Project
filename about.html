@@ -3,6 +3,7 @@
 <head>
     <title>INST377 Final Project</title>
     <link rel="stylesheet" href="app_styles.css">
+    
 </head>
 
 <body>
@@ -20,9 +21,28 @@
         <p>
             This app was developed to give users personalized clothing suggestions based on the weather in a specific city that they search. 
             We use real-time data from Weatherstack and the National Weather Service so users can visualize current weather, future weather trends, and clothing recommendations
-            with visual examples. Our mission is to help remove uncertainty associated with weather related attire and to make everyones daily life more convenient. If you are traveling, don't 
+            with visual examples. Our mission is to help remove uncertainty associated with weather related attire and to make everyone's daily life more convenient. If you are traveling, don't 
             know what clothes to wear, or simply just want to know what the weather is going to be in your area, then this app is for you!
         </p>
+
+        <div class="about-info-box">
+            <dl>
+                <dt><strong>Weatherstack API</strong></dt>
+                <dd>We use this API to pull several data elements regarding the current weather in a specific city (Condition, Temperature, UV Index, Humidity, etc.). Given this data,
+                we will give you clothing recommendations for the day
+                </dd>
+                <dt><strong>National Weather Service API</strong></dt>
+                <dd>This API is used to display a forecast for the weather in a city over the next several hours</dd>
+                <dt><strong>Open-meteo Air Quality API</strong></dt>
+                <dd>This API is used to get the air quality for a city so that we can give you recommendations on whether to go outside or stay indoors</dd>
+            </dl>
+        </div>
+
+        <div class = "about-images">
+            <img src = "https://weatherstack.com/site_images/weatherstack_logo.png"/>
+            <img src = "https://upload.wikimedia.org/wikipedia/commons/f/ff/US-NationalWeatherService-Logo.svg"/>
+            <img src = "https://avatars.githubusercontent.com/u/86407831?v=4"/>
+        </div>
     </main>
 
 </body>
