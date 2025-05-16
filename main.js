@@ -32,6 +32,24 @@ form.addEventListener('submit',
     const speed = weather.wind_speed
     const icon = weather.weather_icons[0]
 
+    
+
+    const aqres = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=us_aqi&timezone=auto`);
+    const aqdata = await aqres.json();
+    const aqi = aqdata.current.us_aqi;
+
+
+
+    if (aqi <= 50) {
+        aq_suggestion = "Go outside! The air quality is good!";
+    } else if (aqi <= 100) {
+        aq_suggestion = "Go outside! The air quality is moderate!";
+    } else if (aqi <= 150) {
+        aq_suggestion = "Be hesitant when going outside because air quality can be unhealthy for sensitive people";
+    } else {
+        aq_suggestion = "It is reccomended that you stay indoors as the air quality can be harmful";
+    }
+
 
 
     weather_data.innerHTML = `
@@ -42,8 +60,13 @@ form.addEventListener('submit',
         <p><strong>UV Index:</strong> ${uv}</p>
         <p><strong>Humidity:</strong> ${humid} %</p>
         <p><strong>Wind Speed:</strong> ${speed} KM/H</p>
+        <p><strong>Air Quality Index:</strong> ${aqi}</p>
+        <p> ${aq_suggestion} <p>
         <img src="${icon}">
     `;
+
+
+    
 
     if (weather.temperature >= 20) {
         clothing_suggestion = "We suggest you wear shorts and a T-shirt as it's warm outside";
