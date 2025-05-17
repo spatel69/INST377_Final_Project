@@ -1,6 +1,11 @@
 # INST377_Final_Project - Weatherwear
 
 ## Project Description
+
+**Link to Deployed App:** https://inst-377-final-project-ten.vercel.app/
+**Link to Deployed App Database Table:** https://inst-377-final-project-ten.vercel.app/locations
+
+
 Weatherwear is a fully functional web app that aids users with clothing suggestions based on the weather data in the city that they search. When the user inputs a city and a state in the US, they will be able to see several real-time weather elements, a 12-hour forecast, and air quality. Given all of this data, the user will then get several clothing recommendations as well as a suggestions if they should go outdoors. The weather data is collected from three different API's - Weatherstack, the National Weather Service, and Open-meteo.
 ## Target Browsers
 ### Desktop
@@ -112,4 +117,12 @@ Weatherwear is a fully functional web app that aids users with clothing suggesti
 
     This API is used to get the air quality for a specific city and that is interpreted to give the user a suggestion on whether to go outdoors or stay inside.
 
+--- 
+
 ### Bugs and Future Development
+---
+#### Bugs ###
+1. Our app only works if the city is in the U.S. it does not work for international cities
+2. The map that plots the location entered on our app is not responsive to screen size
+---
+
