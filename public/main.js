@@ -25,7 +25,7 @@ form.addEventListener('submit',
     const lat = data.location.lat;
     const lon = data.location.lon;
 
-    await fetch('http://localhost:3005/location', {
+    await fetch('https://inst-377-final-project-ten.vercel.app/locations', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
