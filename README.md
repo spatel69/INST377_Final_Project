@@ -125,4 +125,10 @@ Weatherwear is a fully functional web app that aids users with clothing suggesti
 1. Our app only works if the city is in the U.S. it does not work for international cities
 2. The map that plots the location entered on our app is not responsive to screen size
 ---
+#### Future Development
+1. Add a recent searches panel so users don't have to reenter the same city
+2. Implement ability to search up and get result for international cities
+3. Clothing recommendations for different times of the day since temperature is very fluctuant
+4. Use AI to generate more specific clothing recommendation images
+
 
