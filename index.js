@@ -22,6 +22,10 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+app.get('/', (req, res) => {
+  res.sendFile('public/main.html', { root: __dirname });
+})
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to the API!');
