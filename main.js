@@ -6,7 +6,8 @@ form.addEventListener('submit',
     event.preventDefault();
 
     const place = document.getElementById('place').value;
-    const weatherstack = `https://api.weatherstack.com/current?access_key=7f73392e905b5ffa0aca9b882bd55f3c&query=${encodeURIComponent(place)}`;
+    const state = document.getElementById('state').value;
+    const weatherstack = `https://api.weatherstack.com/current?access_key=7f73392e905b5ffa0aca9b882bd55f3c&query=${encodeURIComponent(place + ', ' + state)}`;
     
 
     const weather_data = document.getElementById('weather');
@@ -19,7 +20,7 @@ form.addEventListener('submit',
     const res = await fetch(weatherstack);
     const data = await res.json();
 
-    const location = `${data.location.name}, ${data.location.country}`;
+    const location = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
     const weather = data.current;
     const lat = data.location.lat;
     const lon = data.location.lon;
@@ -30,7 +31,7 @@ form.addEventListener('submit',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            place: place,
+            place: place.toLowerCase(),
             latitude: lat,
             longitude: lon
         })

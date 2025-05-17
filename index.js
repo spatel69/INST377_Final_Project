@@ -1,4 +1,3 @@
-
 const express = require('express');
 const { createClient } = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
@@ -99,4 +98,3 @@ app.post('/location', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
