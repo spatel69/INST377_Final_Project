@@ -98,12 +98,13 @@ form.addEventListener('submit',
         clothes_pic = "https://i.ebayimg.com/images/g/AA0AAOSwDEtaOT7F/s-l1200.jpg";
     }
 
+    const precipitation = condition.toLowerCase();
 
-    if (condition.includes("Rain")) {
+    if (precipitation.includes("rain")) {
         clothing_suggestion += " It's also raining so bring an umbrella or wear a raincoat!";
         rain_snow = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUxFCAJk1HWjMBKZR1IUmnz0MAnoNwYTT21A&s";
     
-    } else if (condition.includes("Snow")) {
+    } else if (precipitation.includes("snow")) {
         clothing_suggestion += " It's also snowing so wear some snow boots!";
         rain_snow = "https://www.switchbacktravel.com/sites/default/files/articles%20/Winter%20Boots%20%28Sorel%20Caribou%20in%20snow%20-%20m%29.jpg"; 
     }
