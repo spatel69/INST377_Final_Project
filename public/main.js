@@ -25,7 +25,7 @@ form.addEventListener('submit',
     const lat = data.location.lat;
     const lon = data.location.lon;
 
-    await fetch('/locations', {
+    await fetch('/location', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
