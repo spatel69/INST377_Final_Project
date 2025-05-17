@@ -9,7 +9,7 @@ const app = express();
 const port = 3005;
 
 app.use(cors({
-  origin: 'http://localhost:5500', 
+  origin: ['http://localhost:5500', 'inst-377-final-project-ten.vercel.app'],
   methods: ['GET', 'POST'],        
   credentials: true                
 }));
