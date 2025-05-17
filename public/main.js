@@ -7,7 +7,7 @@ form.addEventListener('submit',
 
     const place = document.getElementById('place').value;
     const state = document.getElementById('state').value;
-    const weatherstack = `https://api.weatherstack.com/current?access_key=7f73392e905b5ffa0aca9b882bd55f3c&query=${encodeURIComponent(place + ', ' + state)}`;
+    const weatherstack = `https://api.weatherstack.com/current?access_key=0ad887be906e39f1c3d34e3f02f88969&query=${encodeURIComponent(place + ', ' + state)}`;
     
 
     const weather_data = document.getElementById('weather');
