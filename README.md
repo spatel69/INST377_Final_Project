@@ -125,6 +125,7 @@ Weatherwear is a fully functional web app that aids users with clothing suggesti
 #### Bugs ###
 1. Our app only works if the city is in the U.S. it does not work for international cities
 2. The map that plots the location entered on our app is not responsive to screen size
+3. If a city that doesn't exist is entered, the app just shows data based on the state entered
 ---
 #### Future Development
 1. Add a recent searches panel so users don't have to reenter the same city
