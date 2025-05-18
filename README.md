@@ -3,6 +3,7 @@
 ## Project Description
 
 **Link to Deployed App:** https://inst-377-final-project-ten.vercel.app/
+
 **Link to Deployed App Database Table:** https://inst-377-final-project-ten.vercel.app/locations
 
 
